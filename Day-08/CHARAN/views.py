@@ -14,4 +14,8 @@ def homepage(request):
 def lgn(lf):
     return render(lf,'raj/login.html')
 def reg(rt):
-   return render(rt,'raj/register.html')	
+   return render(rt,'raj/register.html')
+def bthm(qw):	
+   return render(qw,'raj/bthm.html')
+def about(rw):
+	return render(rw,'raj/about.html')
