@@ -1,0 +1,17 @@
+{% extends 'html/header.html' %}
+{% block title %}Registration{% endblock %}
+{% block content %}
+<div class="container">
+	<div class="card col-md-6 mx-auto">
+		<h3 class="bg-success text-light p-3 text-center border rounded bg-dark">Registration</h3>
+		<form method="post">
+			{% csrf_token %}
+		<input type="text" name="uname" class="form-control my-2" placeholder="Username">
+		<input type="text" name="eml" class="form-control my-2" placeholder="email">
+		<input type="password"name="pd"class="form-control my-2" placeholder="password">
+		<input type="number" name="ag"class="form-control my-2" placeholder="age">
+		<input type="submit" class="btn btn-primary btn-block my-2"value="Login">
+	</form>
+	</div>
+</div>
+{% endblock %}
