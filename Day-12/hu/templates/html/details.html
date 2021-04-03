@@ -1,0 +1,23 @@
+{% extends 'html/header.html' %}
+{% block title %}Details{% endblock %}
+{% block content %}
+<div class="container">
+	<div class="row">
+	<div class="card col-md-4">
+		<h4 class="text-success">profileimage</h4>
+		<div class="card body">
+			<img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F27804%3Fs%3D400%26v%3D4&imgrefurl=https%3A%2F%2Fgithub.com%2Fdjango%2Fdjango&tbnid=EzuwZq5xuR-1MM&vet=12ahUKEwjEs-O7mN_vAhWDSysKHcBaCwAQMygNegUIARDoAQ..i&docid=P6uTwnypk0xCjM&w=400&h=400&q=django&ved=2ahUKEwjEs-O7mN_vAhWDSysKHcBaCwAQMygNegUIARDoAQ" width="200px" height="200px">
+		</div>
+	</div>
+	<div class="col-md-2">
+	<h4 class="text-success">
+		Username:{{charan.us}}
+		
+	</h4>
+	<h4 class="text-dark">password:{{charan.ps}}</h4>
+	<h4 class="text-info">email:{{charan.em}}</h4>
+	<h4 class="text-info">age:{{charan.ag}}</h4>	
+    </div>
+	</div>
+     </div>
+{% endblock %}
