@@ -1,4 +1,4 @@
-from Emp.models import UsrRg
+from Emp.models import UsrRg,NewData
 from django import forms
 
 
@@ -18,4 +18,12 @@ class Userupdate(forms.ModelForm):
 		widgets={"username":forms.TextInput(attrs = {"class":"form-control","placeholder":"update username","required":True,}),
 	             "email":forms.EmailInput(attrs = {"class":"form-control","placeholder":"update your email","required":True,}),
 				 "age":forms.NumberInput(attrs = {"class":"form-control","placeholder":"update your age","required":True,}),}
+
+class NewUsrForm(forms.ModelForm):
+	class Meta:
+		model = NewData
+		fields = ['mobile','gender']
+		widgets= {"mobile":forms.TextInput(attrs = {"class":"form-control","placeholder":"update mobile number"}),
+		"gender":forms.Select(attrs={"class":"form-control"}),
+		}
 				  

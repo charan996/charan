@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
-from Emp.models import UsrRg
-from Emp.forms import UsregForm,Userupdate
+from Emp.models import UsrRg,NewData
+from Emp.forms import UsregForm,Userupdate,NewUsrForm
 from django.http import HttpResponse
 
 
@@ -48,7 +48,8 @@ def dform(request):
 	if request.method == "POST":
 		e=UsregForm(request.POST)
 		if e.is_valid():
-			e.save()
+			q = e.save()
+			y = NewData.objects.create(pid_id=q.id)
 			return HttpResponse("user created succesfully")
 	e=UsregForm()
 	return render(request,'html/dyform.html',{'tu':e})
@@ -76,13 +77,21 @@ def infodelete(request,id):
 
 def userupdate(up,si):
 	t=UsrRg.objects.get(id=si)
+	y=NewData.objects.get(pid_id=si)
 	if up.method=="POST":
 		d=Userupdate(up.POST,instance=t)
-		if d.is_valid():
+		k=NewUsrForm(up.POST,instance=y)
+		if d.is_valid() and k.is_valid():
 			d.save()
+			k.save()
 			return redirect('/shw')
 	d=Userupdate(instance=t)
-	return render(up,'html/updateuser.html',{'us':d})
+	k=NewUsrForm(instance=y)
+	return render(up,'html/updateuser.html',{'us':d,'nt':k})
+def userinfo(req,uname):
+	p=UsrRg.objects.get(username=uname)
+	h=NewData.objects.get(pid_id=p.id)
+	return render(req,'html/uinfo.html',{'ui':p,'yu':h})
 
 
 	 

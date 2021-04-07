@@ -1,0 +1,39 @@
+{% extends 'html/header.html' %}
+{% block title %}userinfo{% endblock %}
+{% block content %}
+<div class="container">
+	<div class="row mt-5 mx-auto">
+		<div class="card col-md-5">
+			<h3 class="bg-secondary text-center text-light p-2 border rounded">user basic details</h3>
+			<table class="table table-borderless">
+				<tr>
+					<th>username</th>
+					<td>{{ui.username}}</td>
+				</tr>
+				<tr>
+					<th>email</th>
+					<td>{{ui.email}}</td>
+				</tr>
+				<tr>
+					<th>age</th>
+					<td>{{ui.age}}</td>
+				</tr>
+			</table>
+			<a href="{% url 'sh' %}" class="btn btn-block btn-primary" value="Back">Back</a></div>
+			<div class="card col-md mx-2">
+				<h3 class="bg-dark text-center text-white border rounded p-2 mt-3">Full details</h3>
+				<table class="table table-borderless">
+					<tr>
+						<th>Moblie Number</th>
+						<td>{{yu.mobile}}</td>
+					</tr>
+					<tr>
+						<th>Gender</th>
+						<td>{{yu.gender}}</td>
+					</tr>
+					
+				</table>
+			</div>
+		</div>
+	</div>
+{% endblock %}

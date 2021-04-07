@@ -15,4 +15,5 @@ urlpatterns = [
  	path('infodelete/<int:id>',views.infodelete,name="infodelete"),
  	# path('infoedit/<int:id>',views.edit,name="infoedit"),
  	path('ed/<int:si>/',views.userupdate,name="ue"),
+ 	path('ui/<str:uname>/',views.userinfo,name="uif"),
 ]
